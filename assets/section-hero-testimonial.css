@@ -1,0 +1,258 @@
+/* General Layout */
+
+.ht-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ht-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    /* Soft purple glow at bottom as per design */
+    background-size: cover;
+    border-radius: 8px;
+    /* Optional container radius */
+}
+
+
+/* Grid System */
+
+.ht-grid {
+    display: flex;
+    flex-direction: column-reverse;
+    /* Mobile First: Image on top or bottom depending on preference, Design shows Image below text on mobile? actually design shows stacked. */
+    gap: 2rem;
+    align-items: center;
+}
+
+@media (min-width: 990px) {
+    .ht-grid {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 4rem;
+    }
+}
+
+
+/* Content Side */
+
+.ht-content {
+    flex: 1;
+    text-align: center;
+}
+
+@media (min-width: 990px) {
+    .ht-content {
+        text-align: left;
+        max-width: 50%;
+    }
+}
+
+.ht-heading {
+    font-family: serif;
+    /* Replace with theme font if needed e.g., var(--font-heading-family) */
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+@media (min-width: 990px) {
+    .ht-heading {
+        font-size: 3.5rem;
+    }
+}
+
+.ht-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+.ht-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (min-width: 990px) {
+    .ht-actions {
+        align-items: flex-start;
+    }
+}
+
+
+/* Button Styling */
+
+.ht-button {
+    display: inline-block;
+    padding: 12px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    /* Slightly sharp corners as per design */
+    transition: opacity 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.ht-button:hover {
+    opacity: 0.9;
+}
+
+.ht-trust-text {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-decoration: underline;
+    margin-top: 5px;
+}
+
+
+/* Image Side */
+
+.ht-image-wrapper {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.ht-main-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* The Specific Top-Right Rounded Corner from the design */
+    border-radius: 8px 100px 8px 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Divider Line */
+
+.ht-divider {
+    height: 1px;
+    background-color: #e5e7eb;
+    margin: 3rem auto;
+    width: 80%;
+}
+
+@media (min-width: 990px) {
+    .ht-divider {
+        width: 60%;
+    }
+}
+
+
+/* Testimonial Slider */
+
+.ht-slider-container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+.ht-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.ht-slide.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ht-quote {
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.ht-meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.ht-stars {
+    color: #1f2937;
+    /* Black stars as per design */
+    font-size: 0.9rem;
+}
+
+.ht-author-separator {
+    color: #d8b4fe;
+    /* Light purple separator */
+}
+
+
+/* Controls */
+
+.ht-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.ht-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.ht-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.ht-dot.active {
+    background-color: #1f2937;
+}
+
+.ht-next-btn {
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+}
+
+.ht-next-btn:hover {
+    background: #f3f4f6;
+}
