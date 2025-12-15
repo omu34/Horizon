@@ -85,7 +85,9 @@
         "text_YLPk4p",
         "button_H9gpTf"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "h2{}"
+      ],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "video",
